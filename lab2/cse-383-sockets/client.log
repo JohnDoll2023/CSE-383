@@ -1,0 +1,6 @@
+Feb 03, 2021 10:25:34 AM socketClient <init>
+INFO: ClientMAIN - Port = 5001 hostname = 184.58.68.186
+Feb 03, 2021 10:25:34 AM socketClient process
+INFO: Connecting
+Feb 03, 2021 10:25:34 AM socketClient connect
+INFO: Connect => hostname = 184.58.68.186 port = 5001
