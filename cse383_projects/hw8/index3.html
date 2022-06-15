@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!-- John Doll CSE 381 HW8 -->
+<html lang="en">
+        <head>
+                <meta charset="utf-8">
+                <title>John Doll - HW8</title>
+        </head>
+        <body onload="timer()">
+		<script>
+
+			const width = window.innerWidth;
+			const height = window.innerHeight;
+			const iterations = 50 * 10; /* 50 seconds times 10 moves per second */
+			var div1 = document.createElement("div");
+			div1 = divConstructor(div1, 1);
+			var div2 = document.createElement("div");
+			div2 = divConstructor(div2, 2);
+			var div3 = document.createElement("div");
+			div3 = divConstructor(div3, 3);
+			div1Wdist = WdistanceCalc(div1);
+			div1Hdist = HdistanceCalc(div1);
+			div2Wdist = WdistanceCalc(div2);
+                        div2Hdist = HdistanceCalc(div2);
+			div3Wdist = WdistanceCalc(div3);
+                        div3Hdist = HdistanceCalc(div3);
+			function timer() {
+				setInterval(move, 100);
+			}
+
+			async function move() {
+				div1.style.left = (parseFloat(div1.style.left) + div1Wdist) + "px";
+				div1.style.top = (parseFloat(div1.style.top) + div1Hdist) + "px";
+				div2.style.left = (parseFloat(div2.style.left) + div2Wdist) + "px";
+                                div2.style.top = (parseFloat(div2.style.top) + div2Hdist) + "px";
+				div3.style.left = (parseFloat(div3.style.left) + div3Wdist) + "px";
+                                div3.style.top = (parseFloat(div3.style.top) + div3Hdist) + "px";
+			}
+			function HdistanceCalc(div) {
+                                topDist = div.getBoundingClientRect().top;
+				increment = 0;
+                                if (topDist > height/2) {
+                                        increment = -(topDist/iterations);
+                                } else {
+                                        increment = (height - topDist)/iterations;
+                                }
+				return increment/5;
+                                
+                        }
+			function WdistanceCalc(div) {
+				leftDist = div.getBoundingClientRect().left;
+				increment = 0;
+				if (leftDist > width/2) {
+					increment = -(leftDist/iterations);
+				} else {
+					increment = (width - leftDist)/iterations;
+				}
+				return increment;
+			}
+			function divConstructor(div, i) {
+				div.id = "div" + i;
+				div.style.position = "absolute";
+				div.style.left = rnd(width);
+                                div.style.top = rnd(height);
+				let str = document.createTextNode("div" + i);
+				div.appendChild(str);
+				document.body.appendChild(div);
+				return div;
+			}
+			function rnd(limit) {
+				return Math.floor((Math.random() * limit)) + "px";
+			}
+		</script>
+        </body> 
+</html> 

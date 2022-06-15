@@ -1,0 +1,16 @@
+.outlined {
+	border: 1px solid black;
+}
+
+.square {
+	width: 10%;
+	height: 100px;
+}
+
+.color {
+	background-color: red;
+}
+
+.roundedBorder {
+	border-radius: 25px;
+}

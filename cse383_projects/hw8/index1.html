@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!-- John Doll CSE 381 HW8 -->
+<html lang="en">
+        <head>
+                <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+                <title>John Doll - HW8</title>
+        </head>
+        <body>
+		<form method="POST" target="_blank">
+			<div class="form-row">
+				<div class="form-group col-md-3">
+					<label for="loopNum">Number of loops:</label>
+					<input class="form-control" type="numeric" id="loopNum" name="loopNum">
+				</div>
+			</div>
+			
+			<div class="form-row">
+				<div class="form-group col-md-3">
+					<button class="btn btn-primary" type="button" onclick="makeDivs()" name="looper" id="looper">Press Me</button>
+				</div>
+			</div>
+		</form>
+	<script>
+		function makeDivs() {
+			var hide = document.getElementsByClassName("form-row");
+			for(i = 0; i < hide.length; i++) {
+				hide[i].style.visibility = "hidden";
+			}
+			var iterations = document.getElementById("loopNum").value;
+			for(i = 1; i <= iterations; i++) {
+				var div = document.createElement("div");
+				div.id = "div"+i;
+				var rndStr = "";
+				var rnd = Math.floor((Math.random() * 18) + 3);
+				for(j = 0; j < rnd; j++) {
+					var digit = Math.floor((Math.random() * 9));
+					rndStr += digit;
+				}
+				var rndLength = rndStr.length;
+				let str = document.createTextNode(i + ": " + rndStr + " " + rndLength);
+				div.appendChild(str);
+				document.body.appendChild(div);
+			}
+		}
+	</script>
+	</body>
+</html>

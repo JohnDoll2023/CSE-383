@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>John Doll's Final Project</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="final.css">
+        <!-- JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="weather.js?rev=1"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                <li><a href="index.html">Info</a></li>
+                <li><a href="zip.html">Zip Code Lookup</a></li>
+                <li class="active"><a href="weather.html">Weather</a></li>
+                <li><a href="forecast.html">Forecast History</a></li>
+                </ul>
+            </div>
+        </nav>
+        <form>
+            <div class="row">
+                <div class="col-xs-5"></div>
+                <div class="form-group col-xs-2">
+                    <label for="zip">Zip Code:</label>
+                    <input type="text" class="form-control" id="ZIPCODE" name="ZIPCODE" pattern = "^[0-9]{5}$" placeholder="ex. 90210" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-5"></div>
+                <div class="col-xs-1">
+                    <input type="button" class="btn btn-primary" id="submit" name="submit" value="Submit" onclick="getZip()">
+                </div>
+            </div>
+        </form>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 box">
+                <table class="table" id="information" style="display: none;">
+			<thead><tr><th>Day</th><th>High/Low (F)</th><th>Forecast</th><th></th><th>Wind (MPH)</th><th>UV Index</th><th>Humidity</th></tr></thead>
+                    <tbody id = "old">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="first"></div>
+    </body>
+</html>

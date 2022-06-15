@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!--John Doll-->
+<html lang="en">
+        <head>
+                <meta charset="utf-8">
+                <title>CSE 383 - Lab 8</title>
+        </head>
+        <body>
+		<form target="_blank">
+			<input type="text" id="name" name="name" required><br>
+			<script language="javascript">
+				function verifyName(){
+					regex = /^[a-zA-Z]+ [a-zA-Z]+$/;
+					name = document.getElementById('name').value;
+					if(!regex.test(name)){
+						alert('Entered name not valid');
+					}
+				}
+			</script>
+			<input type="submit" name="submit" onclick=verifyName() value="Submit">
+		</form>
+	</body>
+</html>
+

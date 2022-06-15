@@ -1,0 +1,11 @@
+#Protect Directory
+ #password protect excluding specific ip
+ AuthName "Username and password required"
+ AuthUserFile /home/dolljm/.htpasswd
+ AuthType Basic
+ Require valid-user
+ Order Deny,Allow
+ Deny from all
+ Allow from 184.58.68.186
+ Allow from validator.w3.org
+ Satisfy Any

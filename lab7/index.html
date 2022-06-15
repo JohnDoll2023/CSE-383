@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+        CSE 383
+        lab7   -> use JavaScript to create page
+-->
+<html lang="en">
+        <head>
+                <meta charset="utf-8">
+		<title>CSE 383</title>
+        </head>
+	<body onload="image()">
+		<script>
+			var H1 = document.createElement("h1");
+			H1.innerHTML = "CSE 383 Lab 7";
+			document.body.appendChild(H1);
+			var H2 = document.createElement("h2");
+			H2.innerHTML = "John Doll";
+			document.body.appendChild(H2);
+			var H3 = document.createElement("h3");
+			H3.innerHTML = new Date();
+			document.body.appendChild(H3);
+			function image() {
+				for(i = 0; i < 3; i++) {
+					var div = document.createElement("div");
+					div.id = "div"+i;
+					var img = document.createElement("img");
+					img.src =  "https://picsum.photos/100/15?nonce=" + i;
+					div.appendChild(img);
+					document.body.appendChild(div);
+				}
+			}
+			var canvas = document.createElement("canvas");
+			document.body.appendChild(canvas);
+			var ctx = canvas.getContext("2d");
+			ctx.canvas.height = "400";
+			ctx.canvas.width = "400";
+			ctx.fillStyle = "rgb(0,0,250)";  
+			ctx.fillRect(50, 300, 100, 100);
+		</script>
+	</body>
+</html>
+

@@ -1,0 +1,21 @@
+.container {
+    border: 1px solid grey;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 5%;
+}
+
+span {
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+body {
+    background-image: url("IMG_0125.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(255,255,255, 0.8);
+    background-blend-mode: lighten;
+    z-index: -5;
+}

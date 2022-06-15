@@ -1,0 +1,29 @@
+p {
+    font-weight: 700;
+    font-size: 30pt;
+}
+
+#first {
+    background-image: url("http://johnmdoll.com/IMG_0125.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(255,255,255, 0.9);
+    background-blend-mode: lighten;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    background-position: center;
+    position: fixed;
+    z-index: -5;
+}
+
+td {
+    vertical-align: top;
+    font-weight: 700;
+    font-size: 15pt;
+}
+
+tr {
+    vertical-align: top;
+}

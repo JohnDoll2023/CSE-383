@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!--John Doll-->
+<html lang="en">
+        <head>
+                <meta charset="utf-8">
+                <title>CSE 383 Lab 8</title>
+        </head>
+        <body>
+		<form target="_blank">
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name" minlength="2" required><br>
+			<label for="uid">UID:</label>
+			<input type="text" id="uid" name="uid" pattern="\S+$" required><br>
+			<label for="devices">Number of mobile devices:</label>
+			<input type="number" id="devices" name="devices" min="1" max="10" required><br>
+			<label for="quote">Quote citaiton:</label>
+			<input type="text" id="quote" name="quote" pattern=^[-a-zA-Z0-9.,'"/:]*$ required><br>
+			<input type="submit" name="submit" value="Submit">
+		</form>
+	</body>
+</html>
